@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday!</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;800&family=Pacifico&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="birthday.css">
+</head>
+<body>
+<canvas id="bg"></canvas><div id="glow"></div><canvas id="fx"></canvas>
+
+<!-- PAGE 1: CAKE -->
+<section class="page on" id="p1">
+  <h2 id="tip">Make a wish, then blow the candle!</h2>
+  <div id="cakeWrap">
+    <svg viewBox="0 0 360 320" aria-label="Birthday cake">
+      <ellipse cx="180" cy="300" rx="170" ry="16" fill="#0006"/>
+      <defs><clipPath id="cl"><rect x="-60" y="0" width="290" height="400"/></clipPath><clipPath id="cr"><rect x="230" y="0" width="200" height="400"/></clipPath><g id="cb">
+      <rect x="20" y="210" width="320" height="86" rx="20" fill="#ff5fa2"/>
+      <path d="M20 232q20 22 40 0t40 0 40 0 40 0 40 0 40 0 40 0 40 0v-22H20z" fill="#fff"/>
+      <rect x="62" y="140" width="236" height="76" rx="18" fill="#ffd23f"/>
+      <path d="M62 160q20 20 39 0t39 0 39 0 39 0 39 0 39 0v-20H62z" fill="#fff"/>
+      <circle cx="100" cy="190" r="8" fill="#ff5fa2"/><circle cx="180" cy="196" r="8" fill="#5cf2c8"/><circle cx="260" cy="190" r="8" fill="#ff5fa2"/>
+      <circle cx="60" cy="262" r="8" fill="#ffd23f"/><circle cx="180" cy="266" r="8" fill="#5cf2c8"/><circle cx="300" cy="262" r="8" fill="#ffd23f"/>
+      </g></defs>
+      <use href="#cb"/>
+      <g id="candle" tabindex="0" role="button" aria-label="Blow the candle">
+        <rect x="168" y="72" width="24" height="72" rx="6" fill="#5cf2c8"/>
+        <path d="M168 92l24 10M168 112l24 10M168 130l24 10" stroke="#fff" stroke-width="5"/>
+        <rect x="178" y="60" width="4" height="14" fill="#333"/>
+        <g class="flame"><path d="M180 14c-18 22-16 40 0 48 16-8 18-26 0-48z" fill="#ff9a1f"/><path d="M180 30c-9 12-8 22 0 26 8-4 9-14 0-26z" fill="#fff3a0"/></g>
+        <g class="smoke"><path d="M180 50q-12-14 0-28t0-24" stroke="#fff" stroke-width="5" fill="none" stroke-linecap="round"/></g>
+      </g>
+    </svg>
+  </div>
+  <button class="btn" id="blow">Blow the candle 💨</button>
+  <div id="count" class="hide"></div>
+  <h1 id="hb" class="hide">Happy Birthday<br><span id="nm1"></span>!</h1>
+  <button class="btn hide" id="n1">Next 🎉</button>
+</section>
+
+<!-- PAGE 2: GREETINGS + PHOTO -->
+<section class="page" id="p2">
+  <h2>Birthday Wishes for <span class="nm"></span></h2>
+  <p class="wish" id="wishText"></p>
+  <img class="photo" id="photo" src="photo.jpg" alt="Our photo">
+  <button class="btn" data-go="3">Next 🎁</button>
+</section>
+
+<!-- PAGE 3: PRANK GIFT -->
+<section class="page" id="p3">
+  <h2 id="t3">A BIG gift just for you!</h2>
+  <button class="gift big" id="bigGift" aria-label="Open the big gift">
+    <span class="box"><i class="body"></i><i class="lid"></i><i class="bow"></i></span>
+  </button>
+  <p class="hint" id="h3">Tap to open</p>
+  <div id="prank" class="hide"><b>🤡</b><span id="prankTxt"></span></div>
+  <button class="btn hide" id="n3">Next: mystery gifts 🎲</button>
+</section>
+
+<!-- PAGE 4: MYSTERY GIFTS -->
+<section class="page" id="p4">
+  <h2>Mystery Gifts</h2>
+  <p class="hint">Only 3 are real. Tap to open and find them! <b id="found">0</b>/3 found</p>
+  <div id="grid"></div>
+  <button class="btn hide" id="again">Play again 🔁</button>
+</section>
+
+<div id="modal"><div id="mbox"></div></div>
+
+<script src="birthday.js"></script>
+</body>
+</html>
